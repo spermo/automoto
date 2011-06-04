@@ -1,6 +1,6 @@
 Automoto::Application.routes.draw do
   
-  match '/', :to => 'pages#home'
+  root :to => 'pages#home'
   get "pages/home"
 
   get "pages/contact"
