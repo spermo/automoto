@@ -26,6 +26,10 @@ section h1 {
   font-size: 200%;
 }
 
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
 
 
 
