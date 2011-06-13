@@ -10,7 +10,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110607170527) do
+ActiveRecord::Schema.define(:version => 20110612173355) do
+
+  create_table "boards", :force => true do |t|
+    t.string   "title",      :limit => 50
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "conversation_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["conversation_id"], :name => "index_comments_on_conversation_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "conversations", :force => true do |t|
+    t.string   "title",      :limit => 50
+    t.integer  "board_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conversations", ["board_id"], :name => "index_conversations_on_board_id"
+  add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
