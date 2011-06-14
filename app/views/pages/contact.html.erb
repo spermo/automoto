@@ -1,2 +1,23 @@
 <h1>Contact</h1>
-<p>Conctact de l'auto-ecole ici</p>
+<%= form_tag(contact_path) do %>
+
+	<div class="field">
+	<%= label_tag :nom %><br />
+	<%= text_field_tag :nom %>
+	</div>
+	
+	<div class="field">
+	<%= label_tag :email %><br />
+	<%= email_field_tag :email %>
+	</div>
+	
+	<div class="field">
+	<%= label_tag :message %><br />
+	<%= text_area_tag :message %>
+	</div>
+
+	<div class="actions">
+	<%= submit_tag 'Send' %>
+	</div>
+
+<% end %>
