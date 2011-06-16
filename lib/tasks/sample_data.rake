@@ -6,12 +6,13 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     make_users
     make_articles
+    make_roles
   end
 end
 
 def make_users
-  admin = User.create!(:name => "gregoire",
-                       :email => "g@g.com",
+  admin = User.create!(:name => "admin",
+                       :email => "a@a.com",
                        :password => "foobar",
                        :password_confirmation => "foobar")
   admin.toggle!(:admin)
@@ -35,3 +36,32 @@ def make_articles
     end
   end
 end
+
+def make_roles
+  Role.create!(:name => 'admin')
+  Role.create!(:name => 'intervenant')
+  Role.create!(:name => 'direction')
+  Role.create!(:name => 'student')
+  Role.create!(:name => 'webuser')
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
