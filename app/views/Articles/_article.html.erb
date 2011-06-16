@@ -1,5 +1,6 @@
 <tr>
   <td class="article">
+	<h3><span class="title"><%= article.title %></span></h3> <br />
     <span class="content"><%= article.content %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(article.created_at) %> ago.
@@ -8,8 +9,8 @@
   <% if current_user?(article.user) %>
   <td>
     <%= link_to "delete", article, :method => :delete,
-                                     :confirm => "You sure?",
-                                     :title => article.content %>
+                                   :confirm => "You sure?",
+                                   :title => article.content %>
   </td>
   <% end %>
 </tr>

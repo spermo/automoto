@@ -26,6 +26,12 @@ section h1 {
   font-size: 200%;
 }
 
+section h3 {
+   font-size: 150%;
+  margin: 0;
+  padding: 0;
+}
+
 div.field, div.actions {
   margin-bottom: 10px;
 }
@@ -138,6 +144,8 @@ table.articles tr td.article span.timestamp {
   display: block;
   font-size: 85%;
   color: #666;
+  margin-top: 3em;
+  margin-bottom: 1em;
 }
 
 div.user_info img {
@@ -161,7 +169,8 @@ form.new_article {
 }
 
 form.new_article textarea {
-  height: 4em;
+  width: 660px;
+  height: 250px;
   margin-bottom: 0;
 }
 

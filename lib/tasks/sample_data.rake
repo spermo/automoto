@@ -27,10 +27,11 @@ def make_users
 end
 
 def make_articles
-  User.all(:limit => 6).each do |user|
+  User.all(:limit => 1).each do |user|
     50.times do
-      content = Faker::Lorem.sentence(5)
-      user.articles.create!(:content => content)
+      title   = Faker::Name.name
+      content = Faker::Lorem.sentence(15)
+      user.articles.create!(:content => content, :title => title)
     end
   end
 end
