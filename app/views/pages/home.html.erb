@@ -1,3 +1,8 @@
-<h1>News</h1>
-<p>Barème:</p>
-<%= image_tag("bareme.png", :alt => "Bareme", :class => "round") %>
+<h1>Articles</h1>
+
+<% unless @user.articles.empty? %>
+        <table class="articles" summary="User articles">
+          <%= render @articles %>
+        </table>
+        <%= will_paginate @articles %>
+<% end %>
