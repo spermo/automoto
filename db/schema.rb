@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612173355) do
+ActiveRecord::Schema.define(:version => 20110616140754) do
 
   create_table "boards", :force => true do |t|
     t.string   "title",      :limit => 50
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(:version => 20110612173355) do
   add_index "conversations", ["board_id"], :name => "index_conversations_on_board_id"
   add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -47,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20110612173355) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

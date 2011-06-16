@@ -12,6 +12,7 @@ Automoto::Application.routes.draw do
   match '/contact',    :to => 'pages#contact'
   match '/about',      :to => 'pages#about'
   match '/register',   :to => 'users#new'
+  match '/users/intervenant',    :to => 'users#intervenant'
   
   match '/signin',     :to => 'sessions#new'
   match '/signout',    :to => 'sessions#destroy'
