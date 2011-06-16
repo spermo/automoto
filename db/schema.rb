@@ -10,10 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110616140754) do
-=======
-ActiveRecord::Schema.define(:version => 20110616132514) do
 
   create_table "articles", :force => true do |t|
     t.string   "content"
@@ -24,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20110616132514) do
   end
 
   add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
->>>>>>> 20860ffe8f23ba19aceef6b3aef85f146e0d734e
 
   create_table "boards", :force => true do |t|
     t.string   "title",      :limit => 50
@@ -67,11 +63,8 @@ ActiveRecord::Schema.define(:version => 20110616132514) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
-<<<<<<< HEAD
-    t.integer  "role_id"
-=======
     t.boolean  "admin",              :default => false
->>>>>>> 20860ffe8f23ba19aceef6b3aef85f146e0d734e
+    t.integer  "role_id",            :default => 1
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
